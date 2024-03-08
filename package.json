@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.0.1",
+    "migrate-mongo": "^8.2.3",
+    "mongoose": "~6.4.6",
+    "nodemailer-mailjet-transport": "^1.0.4",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "apollo-server-core": "^3.6.7",
+    "apollo-server-express": "^3.6.7",
+    "bcrypt": "^5.0.1",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.2.2",
+    "nodemailer": "^6.7.2",
+    "uuid": "^8.3.2",
+    "winston": "^3.7.2"
+  }
+}

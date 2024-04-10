@@ -6,9 +6,6 @@
   "scripts": {
     "start": "nodemon index.js"
   },
-  "engines": {
-    "node": "20.x"
-  },
   "type": "module",
   "keywords": [],
   "author": "",
@@ -22,7 +19,7 @@
     "express-graphql": "^0.12.0",
     "graphql": "^16.0.1",
     "migrate-mongo": "^8.2.3",
-    "mongoose": "^6.12.7",
+    "mongoose": "~6.4.6",
     "nodemailer-mailjet-transport": "^1.0.4",
     "nodemon": "^2.0.15"
   },
@@ -31,7 +28,7 @@
     "apollo-server-express": "^3.6.7",
     "bcrypt": "^5.0.1",
     "http": "^0.0.1-security",
-    "jsonwebtoken": "^9.0.2",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.2.2",
     "nodemailer": "^6.7.2",
     "uuid": "^8.3.2",

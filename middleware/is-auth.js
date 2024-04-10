@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+// import jwt from 'jsonwebtoken';
 
 const isAuth = (req, res, next) => {
   const authHeader = req.get("Authorization");
@@ -13,7 +13,7 @@ const isAuth = (req, res, next) => {
   }
   let decodedToken;
   try {
-    decodedToken = jwt.verify(token, process.env.SECRET);
+    // decodedToken = jwt.verify(token, process.env.SECRET);
   } catch (err) {
     req.isAuth = false;
     return next();

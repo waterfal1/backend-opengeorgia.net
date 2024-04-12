@@ -1,3 +1,3 @@
-import api from "../index";
+import app from "../index";
 
 export default app;

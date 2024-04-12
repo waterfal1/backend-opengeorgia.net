@@ -54,17 +54,17 @@ const myConfig = {
 config.set(myConfig);
 
 const app = express();
-// app.use(cors());
+app.use(cors());
 
-// const allowCrossDomain = function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "https://opengeorgia.net");
-//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type,token');
-//   next();
-// }
+const allowCrossDomain = function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://opengeorgia.net");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type,token");
+  next();
+};
 
-// app.use(allowCrossDomain);
-// app.use(isAuth);
+app.use(allowCrossDomain);
+app.use(isAuth);
 
 app.use('/myendpoint', bodyParser.json({limit: '50mb'}), graphqlHTTP({
   schema,
@@ -73,21 +73,19 @@ app.use('/myendpoint', bodyParser.json({limit: '50mb'}), graphqlHTTP({
 }))
 
 async function startServer(){
-  // if (process.env.DEV_MODE === "true") {
-  //   const { db } = await database.connect();
-  //   await transvers(db)
-  //   await review(db)
-  //   await tours(db)
-  //   await users(db)
-  //   await connectMongoose(mongoose, app)
-  //   logger.info('Connection in to the databse in DevMode was established')
-  //   logger.info('Migrations were completed')
-  // } else {
-  //   await connectMongoose(mongoose, app);
-  //   logger.info("Connection in Production mode established");
-  // }
+  if (process.env.DEV_MODE === "true") {
+    const { db } = await database.connect();
+    await transvers(db);
+    await review(db);
+    await tours(db);
+    await users(db);
+    await connectMongoose(mongoose, app);
+    logger.info("Connection in to the databse in DevMode was established");
+    logger.info("Migrations were completed");
+  } else {
+    await connectMongoose(mongoose, app);
+    logger.info("Connection in Production mode established");
+  }
 }
 
 startServer()
-
-export default app;

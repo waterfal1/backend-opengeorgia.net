@@ -25,7 +25,7 @@ router.get("/myendpoint", async (_req, res, _next) => {
     timestamp: Date.now(),
   };
   try {
-    res.header("Access-Control-Allow-Origin", "https://www.opengeorgia.net/");
+    res.header("Access-Control-Allow-Origin", "https://www.opengeorgia.net");
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type,token");
     res.send(healthcheck);
@@ -57,7 +57,7 @@ const app = express();
 app.use(cors());
 
 const allowCrossDomain = function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://www.opengeorgia.net/");
+  res.header("Access-Control-Allow-Origin", "https://www.opengeorgia.net");
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type,token");
   next();

@@ -83,8 +83,8 @@ async function startServer(){
     logger.info('Connection in to the databse in DevMode was established')
     logger.info('Migrations were completed')
   } else {
-    await connectMongoose(mongoose, app)
-    logger.info('Connection in Production mode established')
+    await connectMongoose(mongoose, app);
+    logger.info("Connection in Production mode established");
   }
 }
 

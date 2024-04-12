@@ -18,14 +18,18 @@ dotenv.config()
 
 const router = express.Router({});
 
-router.get('/myendpoint', async (_req, res, _next) => {
+router.get("/myendpoint", async (_req, res, _next) => {
   const healthcheck = {
     uptime: process.uptime(),
-    message: 'OK',
-    timestamp: Date.now()
+    message: "OK",
+    timestamp: Date.now(),
   };
   try {
-    res.header("Access-Control-Allow-Origin", "https://opengeorgia.net");
+    res.header("Access-Control-Allow-Origin", [
+      "https://opengeorgia.net",
+      "frontend-opengeorgia-git-master-waterfal1s-projects.vercel.app",
+      "https://www.opengeorgia.net",
+    ]);
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type,token");
     res.send(healthcheck);
@@ -44,12 +48,12 @@ const myConfig = {
     options: {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    }
+    },
   },
   migrationsDir: "migrations",
   changelogCollectionName: "changelog",
   migrationFileExtension: ".js",
-  useFileHash: false
+  useFileHash: false,
 };
 config.set(myConfig);
 
@@ -57,7 +61,10 @@ const app = express();
 app.use(cors());
 
 const allowCrossDomain = function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://opengeorgia.net");
+  res.header("Access-Control-Allow-Origin", [
+    "https://opengeorgia.net",
+    "frontend-opengeorgia-git-master-waterfal1s-projects.vercel.app",
+  ]);
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type,token");
   next();

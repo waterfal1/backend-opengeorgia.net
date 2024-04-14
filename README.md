@@ -1,19 +1,30 @@
-<div>Technologies I used here</div>
-<div>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/mongoose/mongoose-original-wordmark.svg" title="Mongoose" alt="Mongoose" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original-wordmark.svg" title="MongoDB" alt="MongoDB" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/graphql/graphql-plain-wordmark.svg" title="GraphQL" alt="GraphQL" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/nodemon/nodemon-original.svg" title="Nodemon" alt="Nodemon" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original-wordmark.svg" title="Docker" alt="Docker" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/yarn/yarn-original-wordmark.svg" title="Yarn" alt="Yarn" width="40" height="40"/>&nbsp;
-  <img src="https://railway.app/brand/logotype-light.png" title="Railway" alt="railway" width="100" height="30"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original-wordmark.svg"  title="Github" alt="Github" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" alt="Git" width="40" height="40"/>&nbsp;
-</div>
+## Overview
+The backend of the website for travelers across Georgia. 
 
-### :fire: My Stats :
-[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=waterfal1&theme=dark&background=000000)](https://git.io/streak-stats)
+## Installation
+1. Install dependencies - "yarn install"
+2. You need to set up a local MongoDB database (name opengeorgia_dev) to apply migration. Set DEV_MODE to true and DB_URL, DB_URL_MIGRATION as mongodb://127.0.0.1:27017/opengeorgia_dev
+Follow MongoDB docs to install the MongoDB server on your machine.
+3. Request could be blocked by CORS policy. You can define the CORS policy in the index.js entry point file.
+4. Upon the project running disable migration in the "startServer" function to avoid data duplication. 
+5. Backend API is available at "http://localhost:5000/myendpoint"
+## Usage
+You can make some queries at studio.apollographql.com. by pressing "query your server"
+
+some examples: 
+<br />
+<pre>
+    query {
+        getAllTrans {
+           _id, id, cost, placeName
+        }
+    }
+</pre>
+<br />
+<pre>
+  query {
+    getAllReviews {
+      _id alt date face name quotes text1 rating
+    }
+  } 
+</pre>

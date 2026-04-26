@@ -27,7 +27,7 @@ router.get("/myendpoint", async (_req, res, _next) => {
   try {
     res.header(
       "Access-Control-Allow-Origin",
-      "https://frontend-opengeorgia.vercel.app/",
+      "https://frontend-opengeorgia.vercel.app",
     );
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type,token");
@@ -62,7 +62,7 @@ app.use(cors());
 const allowCrossDomain = function (req, res, next) {
   res.header(
     "Access-Control-Allow-Origin",
-    "https://frontend-opengeorgia.vercel.app/",
+    "https://frontend-opengeorgia.vercel.app",
   );
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type,token");
